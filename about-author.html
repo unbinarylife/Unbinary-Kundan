@@ -1,0 +1,791 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Unbinary Kundan - Leadership Clarity</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+
+    <style>
+      body {
+        font-family: "Inter", sans-serif;
+        background-color: #fffff9;
+        color: #333;
+        margin: 0;
+      }
+
+      .page-wrapper {
+        border-left: none;
+        border-right: none;
+        max-width: 1440px;
+        margin: 0 auto;
+      }
+
+      @media (min-width: 992px) {
+        .page-wrapper {
+          border-left: 1px solid #cdcdcd;
+          border-right: 1px solid #cdcdcd;
+        }
+      }
+
+      /* Navbar Styling */
+      .navbar {
+        border-bottom: 1px solid #cdcdcd;
+        padding: 1.5rem 0;
+        background-color: #fffff9;
+      }
+      .navbar-brand img {
+        width: 32px;
+        height: 32px;
+      }
+      .nav-link {
+        color: #666 !important;
+        font-size: 0.95rem;
+        margin-right: 1.5rem;
+      }
+      .nav-link:hover {
+        color: #000 !important;
+      }
+
+      /* --- HERO SECTION STYLING --- */
+      .hero-section {
+        padding: 60px 20px;
+        background-color: #fffff9;
+        border-bottom: #cdcdcd solid 1px;
+      }
+
+      .author-card {
+        position: relative;
+        background: linear-gradient(90deg, #e0f7f4 0%, #fff9e6 100%);
+        border-radius: 24px;
+        display: flex;
+        align-items: center;
+        overflow: visible;
+        padding-left: 40px;
+        margin-top: 100px;
+        height: 300px;
+      }
+
+      .hero-title-area {
+        position: relative;
+        z-index: 10;
+        margin: 20px 0px;
+      }
+
+      .hero-title-area h1 {
+        font-weight: 800;
+        font-size: 2.5rem;
+        margin: 0;
+      }
+
+      .hero-title-area span.highlight {
+        display: block;
+        color: #26a69a;
+        font-style: italic;
+        font-weight: 700;
+      }
+
+      .author-details {
+        max-width: 300px;
+        z-index: 5;
+      }
+
+      .author-details p {
+        font-style: italic;
+        font-weight: 500;
+        margin-bottom: 8px;
+        color: #444;
+      }
+
+      .main-visuals {
+        flex-grow: 1;
+        display: flex;
+        justify-content: center;
+        align-items: flex-end;
+        height: 100%;
+        position: relative;
+      }
+
+      .kundan-img {
+        height: 550px;
+        width: auto;
+        margin-bottom: -75px !important;
+        z-index: 3;
+        filter: grayscale(100%);
+        margin-left: 200px;
+        margin-right: -150px;
+      }
+
+      .book-img {
+        height: 400px;
+        z-index: 2;
+        box-shadow: 15px 15px 30px rgba(0, 0, 0, 0.1);
+      }
+
+      /* --- NEW PHILOSOPHY SECTION STYLING --- */
+      .philosophy-section {
+        padding: 40px 20px;
+        background-color: #fffff9;
+        border-bottom: #cdcdcd solid 1px;
+      }
+
+      /* Remove borders from the header itself */
+      .philosophy-header {
+        font-size: 2.2rem;
+        font-weight: 500;
+        padding: 30px 0px;
+        color: #1a1a1a;
+        margin-bottom: 0; /* Align padding via the wrapper instead */
+        border-bottom: #cdcdcd solid 1px;
+        padding-left: 70px;
+      }
+
+      .philosophy-content {
+        display: flex;
+        gap: 40px;
+        align-items: flex-start;
+      }
+
+      .philosophy-text-box {
+        flex: 1;
+      }
+
+      .philosophy-main-title {
+        color: #26a69a;
+        font-size: 2.8rem;
+        font-weight: 800;
+        font-style: italic;
+        line-height: 1.1;
+        margin-bottom: 15px;
+      }
+
+      .philosophy-subtext {
+        font-size: 1.1rem;
+        color: #666;
+        line-height: 1.5;
+        max-width: 350px;
+      }
+
+      .philosophy-card {
+        flex: 2;
+        background: linear-gradient(135deg, #e0f7f4 0%, #fff9e6 100%);
+        border-radius: 30px;
+        padding: 50px;
+      }
+
+      .philosophy-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 40px 60px;
+      }
+
+      .philosophy-item {
+        display: flex;
+        align-items: flex-start;
+        gap: 20px;
+      }
+
+      .q-icon {
+        font-size: 2.5rem;
+        line-height: 1;
+        color: #a0a0a0;
+        font-weight: 300;
+        font-family: serif;
+      }
+
+      .philosophy-item p {
+        margin: 0;
+        font-size: 1rem;
+        font-weight: 500;
+        color: #333;
+        padding-top: 8px;
+      }
+
+      @media (max-width: 991px) {
+        .author-card {
+          flex-direction: column;
+          text-align: center;
+          padding-top: 100px;
+          margin-top: 40px;
+          height: auto;
+        }
+        .hero-title-area {
+          width: 100%;
+          left: 0;
+          text-align: center;
+        }
+        .kundan-img {
+          width: 0px;
+          height: 0px;
+          margin-top: 20px;
+          margin-left: 30px;
+          margin-right: 0;
+        }
+        .book-img {
+          height: 250px;
+          margin-left: 0;
+        }
+        .philosophy-content {
+          flex-direction: column;
+        }
+        .philosophy-grid {
+          grid-template-columns: 1fr;
+          gap: 30px;
+        }
+        .philosophy-card {
+          padding: 30px;
+        }
+      }
+
+      /* --- NEW: PROFESSIONAL EXPERIENCE STYLING --- */
+      .experience-section {
+        background-color: #fffff9;
+        position: relative;
+        padding-bottom: 80px;
+      }
+
+      .experience-header-container {
+        border-bottom: 1px solid #cdcdcd;
+        padding: 40px 0;
+        text-align: center;
+      }
+
+      .experience-header-box {
+        display: inline-block;
+        border: 1px solid #cdcdcd;
+        padding: 15px 40px;
+        font-size: 2rem;
+        font-weight: 400;
+        background: #fffff9;
+      }
+
+      .experience-grid {
+        display: flex;
+        flex-wrap: nowrap;
+        border-bottom: 1px solid #cdcdcd;
+      }
+
+      .experience-col {
+        flex: 1;
+        padding: 60px 30px;
+        border-right: 1px solid #cdcdcd;
+        position: relative;
+        /* min-height: 300px; */
+      }
+
+      .experience-col:last-child {
+        border-right: none;
+      }
+
+      /* The "+" Crosshairs at corners */
+      .experience-col::before,
+      .experience-col::after {
+        content: "+";
+        position: absolute;
+        color: #999;
+        font-weight: 300;
+        font-size: 1.2rem;
+        z-index: 5;
+      }
+      .experience-col::before {
+        top: -12px;
+        right: -6px;
+      }
+      .experience-col::after {
+        bottom: -12px;
+        right: -6px;
+      }
+
+      .tick-circle {
+        width: 45px;
+        height: 45px;
+        border-radius: 50%;
+        background: radial-gradient(circle at center, #e0f7f4 0%, #fff9e6 100%);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 30px;
+        border: 1px solid rgba(0, 0, 0, 0.05);
+      }
+
+      .experience-text {
+        font-size: 0.95rem;
+        line-height: 1.4;
+        color: #333;
+      }
+
+      @media (max-width: 991px) {
+        .experience-grid {
+          flex-direction: column;
+        }
+        .experience-col {
+          border-right: none;
+          border-bottom: 1px solid #cdcdcd;
+        }
+
+        .experience-header-box {
+          width: 300px;
+        }
+
+        .experience-col::before,
+        .experience-col::after {
+          content: none;
+        }
+        .author-card {
+          flex-direction: column;
+          height: auto;
+          padding: 40px;
+          text-align: center;
+        }
+        .kundan-img {
+          margin: 20px 0;
+          height: 350px;
+        }
+        .book-img {
+          height: 250px;
+        }
+
+        .tick-circle {
+          margin-left: 145px;
+        }
+
+        .experience-text {
+          align-items: center;
+          text-align: center;
+        }
+
+        .experience-col {
+          padding: 20px 20px;
+          margin-top: 20px;
+        }
+      }
+
+      /* --- NEW: Newsletter Section Styling --- */
+      .newsletter-section {
+        padding: 100px 0;
+        text-align: center;
+        /* Grid background pattern */
+        background-color: #fffff9;
+        background-image: linear-gradient(#eee 1px, transparent 1px),
+          linear-gradient(90deg, #eee 1px, transparent 1px);
+        background-size: 40px 40px;
+      }
+
+      .newsletter-text {
+        font-size: 2.2rem;
+        font-weight: 400;
+        max-width: 850px;
+        margin: 0 auto 50px;
+        line-height: 1.4;
+      }
+
+      .newsletter-text span {
+        color: #00a0a0;
+        font-style: italic;
+        font-weight: 700;
+      }
+
+      .newsletter-form {
+        max-width: 600px;
+        margin: 0 auto;
+        display: flex;
+        border: 1px solid #333;
+        border-radius: 8px;
+        overflow: hidden;
+        background: white;
+      }
+
+      .newsletter-form input {
+        flex-grow: 1;
+        border: none;
+        padding: 15px 20px;
+        outline: none;
+        font-size: 1rem;
+      }
+
+      .newsletter-form button {
+        background-color: #333;
+        color: white;
+        border: none;
+        padding: 15px 30px;
+        font-weight: 600;
+        transition: 0.3s;
+      }
+
+      .newsletter-form button:hover {
+        background-color: #000;
+      }
+
+      /* Footer Styling */
+      .footer-section {
+        padding: 40px 20px;
+        background-color: #fffff9;
+      }
+      .footer-container {
+        background-color: #1a1a1a;
+        color: #ffffff;
+        border-radius: 40px;
+        padding: 60px 80px;
+        position: relative;
+        overflow: hidden;
+      }
+      .footer-logo-text {
+        font-size: 2.2rem;
+        font-weight: 800;
+        display: flex;
+        align-items: center;
+        gap: 15px;
+      }
+      .footer-logo-icon {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 4px;
+      }
+      .dot {
+        width: 10px;
+        height: 10px;
+        background-color: #ffcc00;
+        border-radius: 50%;
+      }
+      .footer-nav-container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+      }
+      .footer-social-links {
+        display: flex;
+        gap: 40px;
+        align-items: center;
+      }
+      .footer-link-item {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        color: #ffffff;
+        text-decoration: none;
+        transition: 0.2s;
+      }
+      .footer-divider {
+        height: 1px;
+        background-color: rgba(255, 255, 255, 0.2);
+        margin-top: 40px;
+        width: 100%;
+      }
+      @media (max-width: 991px) {
+        .newsletter-text {
+          font-size: 1.6rem;
+        }
+        .newsletter-form {
+          flex-direction: column;
+          border: none;
+        }
+        .newsletter-form input {
+          border: 1px solid #333;
+          border-radius: 8px;
+          margin-bottom: 10px;
+        }
+        .newsletter-form button {
+          border-radius: 8px;
+        }
+
+        .footer-container {
+          padding: 40px;
+          border-radius: 20px;
+        }
+        .footer-nav-container {
+          flex-direction: column;
+          gap: 30px;
+          align-items: flex-start;
+        }
+        .footer-logo-text {
+          font-size: 1.5rem;
+        }
+        .footer-social-links {
+          gap: 20px;
+          flex-wrap: wrap;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="page-wrapper">
+      <nav class="navbar navbar-expand-lg">
+        <div class="container">
+          <a class="navbar-brand" href="">
+            <img src="images/logo.png" alt="Logo" />
+          </a>
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarNav"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a class="nav-link" href="#">About Book</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">About Author</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Blogs & articles</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Newsletter</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+
+      <section class="hero-section">
+        <div class="container">
+          <div class="hero-title-area">
+            <h1>
+              Kundan,
+              <span style="font-weight: 400; display: inline"
+                >also known as</span
+              >
+              <span class="highlight">Unbinarykundan</span>
+            </h1>
+          </div>
+          <div class="author-card">
+            <div class="author-details">
+              <p>antiCEO Dramantram</p>
+              <p>Leadership thinker</p>
+              <p>Entrepreneur</p>
+              <p>Author (Mantras of Happy Life)</p>
+            </div>
+
+            <div class="main-visuals">
+              <img
+                src="images/kundan-photo.png"
+                alt="Kundan"
+                class="kundan-img"
+              />
+              <img
+                src="images/book-cover.png"
+                alt="Book Cover"
+                class="book-img"
+              />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <h2 class="philosophy-header">Your Philosophy</h2>
+      </section>
+
+      <section class="philosophy-section">
+        <div class="container">
+          <div class="philosophy-content">
+            <div class="philosophy-text-box">
+              <h3 class="philosophy-main-title">
+                Life to me, is not performance
+              </h3>
+              <p class="philosophy-subtext">
+                it's a combination of people, perspective and possibilities.
+              </p>
+            </div>
+
+            <div class="philosophy-card">
+              <div class="philosophy-grid">
+                <div class="philosophy-item">
+                  <span class="q-icon">?</span>
+                  <p>Question before you accept</p>
+                </div>
+                <div class="philosophy-item">
+                  <span class="q-icon">?</span>
+                  <p>Think beyond immediate outcomes</p>
+                </div>
+                <div class="philosophy-item">
+                  <span class="q-icon">?</span>
+                  <p>Be a better version of you everyday</p>
+                </div>
+                <div class="philosophy-item">
+                  <span class="q-icon">?</span>
+                  <p>Choose integrity even when it's inconvenient</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="experience-section">
+        <div class="experience-header-container">
+          <div class="experience-header-box">Professional Experience</div>
+        </div>
+
+        <div class="experience-grid">
+          <div class="experience-col">
+            <div class="tick-circle">
+              <svg
+                width="16"
+                height="12"
+                viewBox="0 0 16 12"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M1 6L5.5 10.5L15 1"
+                  stroke="black"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+              </svg>
+            </div>
+            <div class="experience-text">
+              12 years of corporate Experince with world's biggest brands.
+            </div>
+          </div>
+          <div class="experience-col">
+            <div class="tick-circle">
+              <svg
+                width="16"
+                height="12"
+                viewBox="0 0 16 12"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M1 6L5.5 10.5L15 1"
+                  stroke="black"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+              </svg>
+            </div>
+            <div class="experience-text">
+              antiCEO & Founder of creative agency Dramantram.
+            </div>
+          </div>
+          <div class="experience-col">
+            <div class="tick-circle">
+              <svg
+                width="16"
+                height="12"
+                viewBox="0 0 16 12"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M1 6L5.5 10.5L15 1"
+                  stroke="black"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+              </svg>
+            </div>
+            <div class="experience-text">
+              Leadership and decision-making consultant
+            </div>
+          </div>
+          <div class="experience-col">
+            <div class="tick-circle">
+              <svg
+                width="16"
+                height="12"
+                viewBox="0 0 16 12"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M1 6L5.5 10.5L15 1"
+                  stroke="black"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+              </svg>
+            </div>
+            <div class="experience-text">
+              Mentor to founders, early leaders and business colleges.
+            </div>
+          </div>
+          <div class="experience-col">
+            <div class="tick-circle">
+              <svg
+                width="16"
+                height="12"
+                viewBox="0 0 16 12"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M1 6L5.5 10.5L15 1"
+                  stroke="black"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+              </svg>
+            </div>
+            <div class="experience-text">
+              Authoring towards making Life simple to understand even for school
+              students.
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="newsletter-section">
+        <div class="container">
+          <h2 class="newsletter-text">
+            I share one grounded ideaeach week on
+            <span>leadership clarity</span> and <span>inner states</span>.
+          </h2>
+          <form class="newsletter-form">
+            <input
+              type="text"
+              placeholder="Enter Email or phone No."
+              required
+            />
+            <button type="submit">Join the Newsletter</button>
+          </form>
+        </div>
+      </section>
+
+      <footer class="footer-section">
+        <div class="container-fluid px-md-5">
+          <div class="footer-container">
+            <div class="footer-nav-container">
+              <div class="footer-logo-text">
+                UNBINARY
+                <div class="footer-logo-icon">
+                  <div class="dot"></div>
+                  <div class="dot"></div>
+                  <div class="dot"></div>
+                  <div class="dot"></div>
+                  <div class="dot"></div>
+                  <div class="dot"></div>
+                </div>
+              </div>
+              <div class="footer-social-links">
+                <a href="#" class="footer-link-item">Instagram</a>
+                <a href="#" class="footer-link-item">Phone Number</a>
+              </div>
+            </div>
+            <div class="footer-divider"></div>
+          </div>
+        </div>
+      </footer>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>
