@@ -1,0 +1,507 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Unbinary Kundan - Leadership Clarity</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <style>
+      body {
+        font-family: "Inter", sans-serif;
+        background-color: #fffff9;
+        color: #333;
+        margin: 0;
+      }
+
+      /* Responsive Wrapper for global side lines */
+      .page-wrapper {
+        border-left: none;
+        border-right: none;
+        max-width: 1440px;
+        margin: 0 auto;
+      }
+
+      @media (min-width: 992px) {
+        .page-wrapper {
+          border-left: 1px solid #cdcdcd;
+          border-right: 1px solid #cdcdcd;
+        }
+      }
+
+      /* Navbar Styling */
+      .navbar {
+        border-bottom: 1px solid #cdcdcd;
+        padding: 1.5rem 0;
+        background-color: #fffff9;
+      }
+      .navbar-brand img {
+        width: 32px;
+        height: 32px;
+      }
+      .nav-link {
+        color: #666 !important;
+        font-size: 0.95rem;
+        margin-right: 1.5rem;
+      }
+      .nav-link:hover {
+        color: #000 !important;
+      }
+      /* Newsletter Section */
+      .newsletter-section {
+        position: relative;
+        padding: 100px 0;
+        background-color: #fff;
+        overflow: hidden;
+        border-top: 1px solid #cdcdcd;
+      }
+
+      .newsletter-section::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 250px;
+        height: 250px;
+        background: linear-gradient(
+          225deg,
+          #fffff9 45%,
+          #dcdcdc 50%,
+          #fafafa 56%,
+          #ffffff 80%
+        );
+        box-shadow: -10px 10px 20px rgba(0, 0, 0, 0.05);
+        z-index: 2;
+        border-bottom-left-radius: 100%;
+      }
+
+      @media (max-width: 768px) {
+        .newsletter-section::before {
+          width: 150px;
+          height: 150px;
+        }
+        .newsletter-headline {
+          font-size: 1.5rem;
+        }
+      }
+
+      .newsletter-grid-bg {
+        position: absolute;
+        inset: 0;
+        background-image: linear-gradient(#f0f0f0 1px, transparent 1px),
+          linear-gradient(90deg, #f0f0f0 1px, transparent 1px);
+        background-size: 40px 40px;
+        opacity: 0.5;
+        z-index: 0;
+      }
+
+      .newsletter-content {
+        position: relative;
+        z-index: 3;
+        max-width: 800px;
+        margin: 0 auto;
+      }
+
+      .newsletter-headline {
+        font-size: 2.2rem;
+        font-weight: 400;
+        line-height: 1.3;
+        color: #333;
+        margin-bottom: 40px;
+      }
+
+      .newsletter-headline span {
+        color: #12a5a0;
+        font-weight: 600;
+        font-style: italic;
+      }
+
+      .post-it {
+        background: #fffa82;
+        width: 280px;
+        padding: 30px;
+        margin: 0 auto 50px;
+        position: relative;
+        transform: rotate(-3deg);
+        box-shadow: 10px 10px 15px rgba(0, 0, 0, 0.1);
+        text-align: left;
+      }
+
+      .red-pin {
+        position: absolute;
+        top: -20px;
+        right: 40%;
+        width: 30px;
+        height: 30px;
+        background: radial-gradient(circle at 30% 30%, #ff5e5e, #8b0000);
+        border-radius: 50%;
+        box-shadow: 2px 5px 5px rgba(0, 0, 0, 0.3);
+      }
+      .post-it .highlight-circle {
+        border: 5px solid rgba(255, 0, 0, 0.9);
+        border-radius: 50% 40% 50% 45%;
+        padding: 2px 10px;
+        display: inline-block;
+      }
+
+      .sub-form {
+        display: flex;
+        max-width: 600px;
+        margin: 0 auto;
+        border: 1px solid #333;
+        border-radius: 8px;
+        overflow: hidden;
+        background: #fff;
+      }
+
+      @media (max-width: 576px) {
+        .sub-form {
+          flex-direction: column;
+          border: none;
+        }
+        .sub-form input {
+          border: 1px solid #333 !important;
+          border-radius: 8px;
+          margin-bottom: 10px;
+        }
+        .sub-form button {
+          border-radius: 8px;
+          padding: 15px;
+          height: 40px;
+        }
+      }
+
+      .sub-form input {
+        flex: 1;
+        border: none;
+        padding: 15px 20px;
+        outline: none;
+      }
+      .sub-form button {
+        background: #333;
+        color: #fff;
+        border: none;
+        padding: 0 30px;
+        font-weight: 500;
+      }
+
+      /* Testimonials Masonry */
+      .testimonials-section {
+        padding: 80px 0;
+        background-color: #f0f9f9;
+        border-radius: 40px;
+        margin: 40px 20px;
+      }
+
+      .testimonial-columns {
+        column-count: 3;
+        column-gap: 20px;
+      }
+
+      @media (max-width: 992px) {
+        .testimonial-columns {
+          column-count: 2;
+        }
+      }
+      @media (max-width: 768px) {
+        .testimonial-columns {
+          column-count: 1;
+        }
+        .testimonials-section {
+          margin: 20px 10px;
+          border-radius: 20px;
+        }
+      }
+
+      .tweet-card {
+        background: #fff;
+        border-radius: 16px;
+        padding: 20px;
+        margin-bottom: 20px;
+        break-inside: avoid;
+        border: 1px solid #e1e8ed;
+      }
+
+      /* Footer */
+      .footer-section {
+        padding: 40px 20px;
+        background-color: #fffff9;
+      }
+
+      .footer-container {
+        background-color: #1a1a1a;
+        color: #ffffff;
+        border-radius: 40px;
+        padding: 60px 80px;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .footer-logo-text {
+        font-size: 2.2rem;
+        font-weight: 800;
+        display: flex;
+        align-items: center;
+        gap: 15px;
+      }
+
+      .footer-logo-icon {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 4px;
+      }
+      .dot {
+        width: 10px;
+        height: 10px;
+        background-color: #ffcc00;
+        border-radius: 50%;
+      }
+
+      .footer-nav-container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+      }
+      .footer-social-links {
+        display: flex;
+        gap: 40px;
+        align-items: center;
+      }
+
+      @media (max-width: 992px) {
+        .footer-container {
+          padding: 40px;
+          border-radius: 20px;
+        }
+        .footer-nav-container {
+          flex-direction: column;
+          gap: 30px;
+          align-items: flex-start;
+        }
+        .footer-logo-text {
+          font-size: 1.5rem;
+        }
+        .footer-social-links {
+          gap: 20px;
+          flex-wrap: wrap;
+        }
+      }
+
+      .footer-link-item {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        color: #ffffff;
+        text-decoration: none;
+        transition: 0.2s;
+      }
+      .footer-divider {
+        height: 1px;
+        background-color: rgba(255, 255, 255, 0.2);
+        margin-top: 40px;
+        width: 100%;
+      }
+
+      .hero-section {
+        /* padding: 100px 0px; */
+      }
+
+      .highlight-text {
+        color: #12a5a0;
+        font-weight: 600;
+        font-style: italic;
+      }
+
+      .left-col {
+        border-right: 1px solid #cdcdcd;
+        padding: 100px 0px;
+      }
+      .right-col {
+        border-left: 1px solid #cdcdcd;
+        padding: 100px 40px;
+      }
+
+      .newsletter-text {
+        padding-bottom: 50px;
+      }
+
+      @media (max-width: 991px) {
+        .left-col {
+          padding: 40px 40px;
+        }
+        .right-col {
+          padding: 30px 40px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="page-wrapper">
+      <nav class="navbar navbar-expand-lg">
+        <div class="container">
+          <a class="navbar-brand" href="index.html">
+            <img src="images/logo.png" alt="Logo" />
+          </a>
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarNav"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a class="nav-link" href="about-book.html">About Book</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="about-author.html">About Author</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="blogs.html">Blogs & articles</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="newsletter.html">Newsletter</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+
+      <!-- Hero Section -->
+      <section class="hero-section">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-6 left-col">
+              <h1>
+                Clear thinking for leaders who want
+                <span class="highlight-text">less drama</span> and
+                <span class="highlight-text">constant work</span>
+                of self
+              </h1>
+            </div>
+            <div class="col-md-6 right-col">
+              <p>
+                One short note each week on leadership, inner status, and
+                practical clarity drawn from real situations across work and
+                life.
+              </p>
+              <p>
+                <strong
+                  >No motivation. No productivity hacks. Just
+                  perspective</strong
+                >
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="newsletter-section text-center">
+        <div class="newsletter-grid-bg"></div>
+        <div class="container newsletter-content">
+          <h2 class="newsletter-headline">
+            I will be
+            <span class="highlight-text"
+              >connecting with my first 100 readers to add the social
+              proof</span
+            >
+            as the book grows 6 months and 1 year old
+          </h2>
+          <p class="newsletter-text">
+            Write to me at <strong>unbinarylife@gmail.com</strong> if you want
+            to be a part of this list
+          </p>
+          <div style="position: relative; display: inline-block">
+            <div class="red-pin"></div>
+            <div class="post-it">
+              <p>No spam</p>
+              <p>No hype</p>
+              <p><span class="highlight-circle">Just useful thinking.</span></p>
+            </div>
+          </div>
+          <form class="sub-form">
+            <input type="text" placeholder="Enter Email or phone No." />
+            <button type="submit">Join the Newsletter</button>
+          </form>
+        </div>
+      </section>
+
+      <footer class="footer-section">
+        <div class="container-fluid px-md-5">
+          <div class="footer-container">
+            <div class="footer-nav-container">
+              <div class="footer-logo-text">
+                UNBINARY
+                <div class="footer-logo-icon">
+                  <div class="dot"></div>
+                  <div class="dot"></div>
+                  <div class="dot"></div>
+                  <div class="dot"></div>
+                  <div class="dot"></div>
+                  <div class="dot"></div>
+                </div>
+              </div>
+              <div class="footer-social-links">
+                <a href="#" class="footer-link-item"
+                  ><svg
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  >
+                    <rect
+                      x="2"
+                      y="2"
+                      width="20"
+                      height="20"
+                      rx="5"
+                      ry="5"
+                    ></rect>
+                    <path
+                      d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"
+                    ></path>
+                    <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+                  </svg>
+                  Instagram</a
+                >
+                <a href="tel:+1234567890" class="footer-link-item"
+                  ><svg
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  >
+                    <path
+                      d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l2.18-2.18a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"
+                    ></path>
+                  </svg>
+                  Phone Number</a
+                >
+              </div>
+            </div>
+            <div class="footer-divider"></div>
+          </div>
+        </div>
+      </footer>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>
